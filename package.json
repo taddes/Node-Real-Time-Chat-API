@@ -1,0 +1,23 @@
+{
+  "name": "node-real-time-chat-api",
+  "version": "1.0.0",
+  "description": "A real-time, threaded chat api using node, express, socket.io, and mongodb",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taddes/Node-Real-Time-Chat-API.git"
+  },
+  "author": "Taddes Korris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taddes/Node-Real-Time-Chat-API/issues"
+  },
+  "homepage": "https://github.com/taddes/Node-Real-Time-Chat-API#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.1.5"
+  }
+}
