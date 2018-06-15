@@ -5,7 +5,8 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
-const config = require('./config/main')
+const config = require('./config/main');
+const User = require('./app/models/user');
 
 app = express();
 
@@ -18,8 +19,17 @@ app.use(bodyParser.json());
 // Log requests to console
 app.use(morgan('dev'));
 
+// Initialize Passport for use
+app.use(passport.initialize());
+
 // connect to database via mongoose
 mongoose.connect(config.database);
+
+// Add defined Passport Strategy
+require('./config/passport')(passport);
+
+// Create API group routes & register New Users
+const apiRoutes = express.Router();
 
 // Home route
 app.get('/', (req, res) => {
